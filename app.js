@@ -64,6 +64,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/:customListName", function(req, res){
+  
   const customListName = _.capitalize(req.params.customListName);
 
   List.findOne({name: customListName}, function(err, foundList){
@@ -137,7 +138,7 @@ app.get("/about", function(req, res){
 
 let port = process.env.PORT;
 if(port == null || port == ""){
-  port = 3000
+  port = 3000;
 }
 
 app.listen(port, function() {
